@@ -5,13 +5,18 @@ line-height: 1vw;
 letter-spacing: normal;
 text-align: left;
 
+
 box-sizing: border-box;
 
+--color-dark-gray-2: #777;
 --color-gray-0: #B9B9B9;
 --color-gray-1: #D9D9D9;
+--color-gray-1-5: #ECECEC;
 --color-gray-2: #F8F8F8;
 
 --color-accent: #97DDC8;
+
+--color-modal-background: rgba(0, 0, 0, 0.75);
 }
 
 html, body {
@@ -19,6 +24,16 @@ html, body {
   padding: 0;
 }
 
+*::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+/*
+*:focus {
+  outline: 0.1rem solid var(--color-accent);
+  outline-offset: 0.05rem;
+}
+*/
 .search-bar {
   border-radius: 1em;
   border-width: 0;
@@ -31,8 +46,26 @@ a {
   text-decoration: none;
 }
 
+a.inline-link {
+  text-decoration: underline;
+  color: inherit;
+}
+
+a.inline-link:hover {
+  color: black;
+}
+
 .title-wrapper p, h1 {
   padding: 0;
+}
+
+.ch-title {
+  font-size: 8em;
+  line-height: 1em;
+  text-transform: uppercase;
+  font-weight: 550;
+  text-align: center;
+  margin: 0.32em 0;
 }
 
 .p-title {
@@ -57,6 +90,10 @@ a {
   border-radius: 1em;
   padding: 0.33em;
   margin: 0 0.2em;
+  transition: .25s;
+}
+.btn:hover {
+  background-color: var(--color-accent);
 }
 
 .btn-combo::after {
@@ -68,4 +105,41 @@ a {
   margin: 0 0 0 0.5em;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+
+.content {
+  margin: 3em 4em;
+}
+
+.section {
+  margin: 2.85rem 0 0 0;
+}
+
+input.input-text {
+  border: 1px solid;
+  border-radius: 1em;
+  padding: 0.5em;
+}
+
+input.input-text::placeholder {
+  color: var(--color-dark-gray-2);
+}
+
+input.input-checkbox {
+  background-color: white;
+  border: 0.1rem solid;
+  border-color: black;
+  margin: 0;
+  width: 1.43rem;
+  height: 1.43rem;
+}
+
+.label-composite {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 0.5rem;
+}
+.label-content {
+  margin: 0;
 }
